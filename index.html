@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem de 4 anos de namoro!</title>
+    <link rel="shortcut icon" href="heart.ico.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b230d3;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #f14a3b;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .carousel img {
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-container {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .button {
+            background-color: #c43023;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff4e47;
+        }
+
+        .message {
+            display: none;
+            font-size: 1.3em;
+            color: #555;
+            margin-top: 20px;
+        }
+
+        .carousel-nav {
+            position: relative;
+            top: -50px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: -60px;
+        }
+
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Parabéns pelos nossos 4 anos juntos <br> Meu amor ❤️ !</h1>
+
+        <!-- Carrossel de imagens -->
+        <div class="carousel">
+            <div class="carousel-container" id="carouselImages">
+                <img src="IMG-20241118-WA1169.jpg" alt="Foto 1">
+                <img src="foto.jpg" alt="Foto 2">
+                <img src="IMG-20241118-WA1171.jpg" alt="Foto 3">
+                <img src="IMG-20241118-WA1166.jpg" alt="Foto 4">
+                <img src="foto1.jpg" alt="Foto 4">
+                <img src="foto2.jpg" alt="Foto 4">
+
+
+            </div>
+        </div>
+        
+        <div class="carousel-nav">
+            <button id="prevBtn">&#10094;</button>
+            <button id="nextBtn">&#10095;</button>
+        </div>
+
+        <!-- Botão para revelar a mensagem -->
+        <button class="button" id="revealMessageBtn">Clique aqui meu amor 🌚</button>
+
+        <!-- Mensagem -->
+        <p class="message" id="message">
+            Bom... <br>
+            Imaginei muitas formas de começar esse texto, e não poderia começar de uma forma diferente que não fosse primeiramente te agradecendo por ser essa pessoa incrivel e te dizer que você representa TUDO pra mim, eu te amo e não me vejo 1 segundo longe de vc...
+            <br>Quando te conheci em 2020, sabia que Deus tinha um plano imenso para nós dois, você sempre me cativou muito pelo seu jeito, sua maturidade, seu esforço e sua mentalidade que sempre esteve além do seu tempo. Quem diria que aquela menina reimosa e manhosa que eu conheci hoje, seria essa mulher incrivel e de tanta paciência KKK brincadeiras a parte, eu sou muito orgulhoso da mulher incrivel que você	 se tornou meu amor ❤️ <br> E Camilly, já passamos diversas dificuldades nesses 4 anos, mas nenhuma me fez cogitar a idéia de um dia te deixar ou desistir dos nossos sonhos, sei que passamos um momento dificil esses últimos dias, mas independente de tudo, eu ainda continuo te amando cada dia mais e te prometo que nunca mais vou deixar nosso amor esfriar, e esse momento de término que passamos não passou de nada além de aprendizagem e uma prova de que nós dois devemos estar juntos para sempre independente de qualquer problema e que você é a minha pessoa e estaremos juntos para o que der e vier... <br>
+            Você é o amor da minha vida ❤️<br>
+            A futura mãe dos meus filhos ❤️<br> e prometo te fazer a esposa mais feliz do mundo... <br> Vamos consquistar tudo juntos e com fé em Deus ano que vem estaremso comemorando nosso casamento e agradecendo a Deus por cada consquista que tivemos nesse ano que vem <br>
+            Me desculpa pelos momentos de falha e pelas mentiras e de fraqueza... <br>
+            Mas prometo ser o homem ideal para nossa relação daqui para frente <br>
+            Esses 4 anos foram incríveis, cada momento ao seu lado é especial e único. Te amo cada vez mais! <3"
+        </p>
+    </div>
+
+    <script>
+        // Carrossel de imagens
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        const carouselContainer = document.getElementById('carouselImages');
+
+        // Função para mostrar a próxima imagem
+        function showNextImage() {
+            if (currentIndex < images.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }
+
+        // Função para mostrar a imagem anterior
+        function showPrevImage() {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = images.length - 1;
+            }
+            updateCarousel();
+        }
+
+        // Atualizar a posição do carrossel
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carouselContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Evento para o botão de próximo
+        document.getElementById('nextBtn').addEventListener('click', showNextImage);
+
+        // Evento para o botão de anterior
+        document.getElementById('prevBtn').addEventListener('click', showPrevImage);
+
+        // Botão para revelar a mensagem
+        document.getElementById('revealMessageBtn').addEventListener('click', function() {
+            document.getElementById('message').style.display = 'block';
+        });
+    </script>
+    
+</body>
+</html>
